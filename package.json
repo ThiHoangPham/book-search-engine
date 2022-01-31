@@ -11,7 +11,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "Apache License",
+  "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "if-env": "^1.0.4"
+  },
   "devDependencies": {
     "concurrently": "^5.1.0"
   }
