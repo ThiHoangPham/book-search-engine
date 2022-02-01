@@ -4,27 +4,25 @@
   "description": "A fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end.",
   "main": "server/server.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
   },
   "keywords": [],
   "author": "Hoang Thai Pham",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
     "if-env": "^1.0.4"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.2.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ThiHoangPham/book-search-engine.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ThiHoangPham/book-search-engine/issues"
-  },
-  "homepage": "https://github.com/ThiHoangPham/book-search-engine#readme"
+  }
 }
